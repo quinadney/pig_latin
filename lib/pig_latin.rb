@@ -5,7 +5,8 @@ module PigLatin
   alpha = ('a'..'z').to_a
   vowels = %w[a e i o u]
   consonants = alpha - vowels
-
+  return "that's not a word" if !str.is_a? String
+  
     if vowels.include?(str[0])
       str + 'way'
     elsif consonants.include?(str[0]) && consonants.include?(str[1])
